@@ -42,7 +42,7 @@ async function run(){
             const query={_id: ObjectId(id)};
             const users = await userCollection.findOne(query);
             res.send(users);
-        });
+        }); 
 
         //post
         app.post('/item', async(req, res) =>{
