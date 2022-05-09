@@ -49,6 +49,14 @@ async function run(){
             const newUser = req.body;
             const result = await userCollection.insertOne(newUser);
             res.send(result);
+        });
+
+        //Delete
+        app.delete('/item/:id', async(req,res)=>{
+            const id = req.params.id;
+            const query = {_id: ObjectId(id)};
+            const result = await userCollection.deleteOne(query);
+            res.send(result);
         })
 
     }
